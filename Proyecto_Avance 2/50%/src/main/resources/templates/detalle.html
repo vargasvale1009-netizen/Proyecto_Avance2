@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title th:text="${vehiculo != null ? vehiculo.nombre + ' — VehiculosCR.com' : 'Detalle — VehiculosCR.com'}">Detalle</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/marcas.css}"/>
+    <link rel="stylesheet" th:href="@{/css/detalle.css}"/>
+</head>
+<body>
+
+    <div class="phone-wrapper">
+
+        <!-- ── CABECERA BLANCA CON LOGO ── -->
+        <div class="marcas-header">
+            <div class="marcas-logo-box">
+                <svg class="marcas-car-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 45 Q60 20 200 18 Q240 18 250 38" fill="none" stroke="#e8b4c0" stroke-width="28" stroke-linecap="round" opacity="0.35"/>
+                    <path d="M25 55 Q40 55 48 46 Q64 26 105 22 Q140 18 170 22 Q200 26 212 42 Q220 50 232 53 L236 55 Q240 57 236 60 L232 60 Q230 66 222 66 Q214 66 212 60 L72 60 Q70 66 62 66 Q54 66 52 60 L25 60 Q18 58 18 55 Z"
+                          fill="none" stroke="#1a3a6e" stroke-width="2.2"/>
+                    <path d="M80 46 Q90 28 128 22 Q165 18 185 44" fill="none" stroke="#1a3a6e" stroke-width="2.2"/>
+                    <path d="M133 24 Q158 21 182 42 L162 44 Q150 30 133 28 Z" fill="rgba(26,58,110,0.12)" stroke="#1a3a6e" stroke-width="1"/>
+                    <path d="M84 44 Q92 28 130 24 L130 28 Q96 30 90 44 Z" fill="rgba(26,58,110,0.12)" stroke="#1a3a6e" stroke-width="1"/>
+                    <circle cx="62"  cy="60" r="9" fill="none" stroke="#c0392b" stroke-width="2.2"/>
+                    <circle cx="62"  cy="60" r="3.5" fill="#c0392b"/>
+                    <circle cx="222" cy="60" r="9" fill="none" stroke="#c0392b" stroke-width="2.2"/>
+                    <circle cx="222" cy="60" r="3.5" fill="#c0392b"/>
+                    <path d="M230 49 L238 46 L239 51 L232 53 Z" fill="#c0392b"/>
+                    <line x1="26" y1="57" x2="10" y2="55" stroke="#c0392b" stroke-width="1.8"/>
+                    <line x1="236" y1="57" x2="250" y2="54" stroke="#c0392b" stroke-width="1.8"/>
+                </svg>
+                <div class="marcas-logo-text">
+                    <span class="ml-red">VEHICULOS</span><span class="ml-blue">CR</span><span class="ml-red">.COM</span>
+                </div>
+                <div class="marcas-logo-sub">EXPERIENCIA, PROFESIONALISMO Y SEGURIDAD</div>
+            </div>
+        </div>
+
+        <!-- ── CUERPO DEL DETALLE ── -->
+        <div class="detalle-body">
+
+            <!-- Imagen principal -->
+            <div class="detalle-img-principal">
+                <img th:src="@{'/img/' + ${vehiculo.carpeta} + '/' + ${vehiculo.imgPrincipal}}"
+                     th:alt="${vehiculo.nombre}"
+                     class="detalle-foto-principal"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                <div class="detalle-foto-fallback">🚙</div>
+            </div>
+
+            <!-- Miniaturas -->
+            <div class="detalle-miniaturas">
+                <div th:each="mini : ${vehiculo.miniaturas}" class="detalle-mini-box">
+                    <img th:src="@{'/img/' + ${vehiculo.carpeta} + '/' + ${mini}}"
+                         th:alt="${vehiculo.nombre}"
+                         class="detalle-mini-foto"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                    <div class="detalle-mini-fallback">🚗</div>
+                </div>
+            </div>
+
+            <!-- Título y datos -->
+            <div class="detalle-titulo-bloque">
+                <p class="detalle-titulo" th:text="${vehiculo.nombre}">Nombre del vehículo</p>
+                <p class="detalle-specs" th:text="${vehiculo.specs}">Especificaciones</p>
+            </div>
+
+            <div class="detalle-separador"></div>
+
+            <!-- Lista "Tu vehículo incluye" -->
+            <div class="detalle-incluye">
+                <p class="detalle-incluye-titulo">Tu vehículo incluye:</p>
+                <ul class="detalle-lista">
+                    <li>Marchamo al día.</li>
+                    <li>Dekra vigente y garantizado.</li>
+                    <li>Garantía por escrito.</li>
+                    <li>Mecánica al 100%.</li>
+                    <li>En usados, restaurados al máximo.</li>
+                    <li>¡Entrega inmediata!</li>
+                    <li>Regalías y promociones si las hay.</li>
+                    <li>Gastos adicionales se incluyen en la cuota.</li>
+                </ul>
+            </div>
+
+            <!-- Botón Cómo Comparar -->
+            <div class="detalle-acciones">
+                <a th:href="@{/como-comprar}" class="btn-como-comprar">
+                    <em>Cómo Comparar</em>
+                </a>
+            </div>
+
+            <!-- Botón WhatsApp + teléfono -->
+            <div class="detalle-whatsapp-bloque">
+                <a href="https://wa.me/50685689747" class="btn-whatsapp" target="_blank">
+                    <em>Contáctanos por WhatsApp</em>
+                </a>
+                <div class="detalle-telefono">8568-9747</div>
+            </div>
+
+            <!-- Navegación anterior / siguiente -->
+            <div class="detalle-nav">
+                <a th:href="@{/detalle?id=${vehiculo.idAnterior}}"
+                   th:classappend="${vehiculo.idAnterior == null} ? ' nav-disabled'"
+                   class="btn-nav">&#171;</a>
+
+                <a th:href="@{/detalle?id=${vehiculo.idSiguiente}}"
+                   th:classappend="${vehiculo.idSiguiente == null} ? ' nav-disabled'"
+                   class="btn-nav">&#187;</a>
+            </div>
+
+        </div><!-- /detalle-body -->
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+/* ============================================================
+   VehiculosCR.com — form.css  (Login / Registro)
+   ============================================================ */
+
+/* Encabezado de formulario (mini barra con logo) */
+.form-header {
+    background-color: #1a1a2e;
+    padding: 14px 18px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.back-link {
+    color: #00d4e8;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.back-link:hover {
+    color: #ffffff;
+}
+
+.form-brand {
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* Área de formulario */
+.form-section {
+    background-color: #f0f0f0;
+    padding: 28px 24px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.form-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 22px;
+    text-align: center;
+    border-bottom: 2px solid #00d4e8;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px 12px;
+    border: 1.5px solid #bbbbbb;
+    border-radius: 5px;
+    font-size: 0.92rem;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #00b8cc;
+}
+
+/* Botón dentro de formulario */
+.btn-form {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 8px;
+    font-size: 1rem;
+}
+
+.form-footer-text {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 18px;
+}
+
+.form-footer-text a {
+    color: #0077aa;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.form-footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* ——— SECCIÓN DE RECUPERACIÓN DE CONTRASEÑA ——— */
+.recover-section {
+    background-color: #d8d8d8;
+    padding: 28px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Botón azul oscuro estilo "Volver a inicio de sesión" */
+.btn-dark-blue {
+    display: block;
+    width: 100%;
+    padding: 13px 18px;
+    background-color: #1a3a6e;
+    border: 2.5px solid #122a52;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-dark-blue:hover {
+    background-color: #122a52;
+    transform: translateY(-1px);
+}
+
+.btn-dark-blue:active {
+    transform: translateY(0);
+}
+
+/* Fila del botón submit/volver */
+.recover-actions {
+    margin-top: 14px;
+}
+
+/* Flecha ‹‹ en esquina inferior izquierda */
+.back-arrow-row {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.back-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 2.5px solid #555;
+    border-radius: 50%;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-decoration: none;
+    background-color: #c8c8c8;
+    transition: background-color 0.2s;
+}
+
+.back-arrow:hover {
+    background-color: #aaaaaa;
+}
+
+/* Ajuste de inputs en la sección recover (fondo gris hereda) */
+.recover-section .form-group {
+    margin-bottom: 18px;
+}
+
+.recover-section .form-group label {
+    font-size: 0.83rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.recover-section .form-group input {
+    padding: 11px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.92rem;
+    background-color: #5ad6e8;
+    outline: none;
+    color: #000;
+}
+
+.recover-section .form-group input:focus {
+    background-color: #3ec8dc;
+}

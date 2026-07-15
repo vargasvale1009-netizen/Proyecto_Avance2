@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cómo Comparar — VehiculosCR.com</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/marcas.css}"/>
+    <link rel="stylesheet" th:href="@{/css/detalle.css}"/>
+</head>
+<body>
+    <div class="phone-wrapper">
+        <div class="marcas-header">
+            <div class="marcas-logo-box">
+                <div class="marcas-logo-text">
+                    <span class="ml-red">VEHICULOS</span><span class="ml-blue">CR</span><span class="ml-red">.COM</span>
+                </div>
+                <div class="marcas-logo-sub">EXPERIENCIA, PROFESIONALISMO Y SEGURIDAD</div>
+            </div>
+        </div>
+        <div class="detalle-body" style="padding: 30px 20px; align-items:center; text-align:center;">
+            <p style="font-size:1rem; font-weight:800; color:#1a3a6e; margin-bottom:14px;">Cómo Comparar</p>
+            <p style="font-size:0.85rem; color:#444; line-height:1.6; margin-bottom:28px;">
+                Contáctanos vía WhatsApp o llámanos al <strong>8568-9747</strong> y
+                te asesoramos en la comparación de tu vehículo de interés.
+            </p>
+            <a href="https://wa.me/50685689747" class="btn-whatsapp" style="border-radius:6px; margin-bottom:10px;" target="_blank">
+                <em>Contáctanos por WhatsApp</em>
+            </a>
+            <a th:href="@{/marcas}" class="btn-como-comprar" style="margin-top:10px;">
+                &#8592; Volver a marcas
+            </a>
+        </div>
+    </div>
+</body>
+</html>

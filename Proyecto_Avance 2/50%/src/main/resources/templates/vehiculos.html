@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vehículos — VehiculosCR.com</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/marcas.css}"/>
+    <link rel="stylesheet" th:href="@{/css/vehiculos.css}"/>
+</head>
+<body>
+
+    <div class="phone-wrapper">
+
+        <!-- ── CABECERA BLANCA CON LOGO ── -->
+        <div class="marcas-header">
+            <div class="marcas-logo-box">
+                <svg class="marcas-car-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 45 Q60 20 200 18 Q240 18 250 38" fill="none" stroke="#e8b4c0" stroke-width="28" stroke-linecap="round" opacity="0.35"/>
+                    <path d="M25 55 Q40 55 48 46 Q64 26 105 22 Q140 18 170 22 Q200 26 212 42 Q220 50 232 53 L236 55 Q240 57 236 60 L232 60 Q230 66 222 66 Q214 66 212 60 L72 60 Q70 66 62 66 Q54 66 52 60 L25 60 Q18 58 18 55 Z"
+                          fill="none" stroke="#1a3a6e" stroke-width="2.2"/>
+                    <path d="M80 46 Q90 28 128 22 Q165 18 185 44" fill="none" stroke="#1a3a6e" stroke-width="2.2"/>
+                    <path d="M133 24 Q158 21 182 42 L162 44 Q150 30 133 28 Z" fill="rgba(26,58,110,0.12)" stroke="#1a3a6e" stroke-width="1"/>
+                    <path d="M84 44 Q92 28 130 24 L130 28 Q96 30 90 44 Z" fill="rgba(26,58,110,0.12)" stroke="#1a3a6e" stroke-width="1"/>
+                    <circle cx="62"  cy="60" r="9" fill="none" stroke="#c0392b" stroke-width="2.2"/>
+                    <circle cx="62"  cy="60" r="3.5" fill="#c0392b"/>
+                    <circle cx="222" cy="60" r="9" fill="none" stroke="#c0392b" stroke-width="2.2"/>
+                    <circle cx="222" cy="60" r="3.5" fill="#c0392b"/>
+                    <path d="M230 49 L238 46 L239 51 L232 53 Z" fill="#c0392b"/>
+                    <line x1="26" y1="57" x2="10" y2="55" stroke="#c0392b" stroke-width="1.8"/>
+                    <line x1="236" y1="57" x2="250" y2="54" stroke="#c0392b" stroke-width="1.8"/>
+                </svg>
+                <div class="marcas-logo-text">
+                    <span class="ml-red">VEHICULOS</span><span class="ml-blue">CR</span><span class="ml-red">.COM</span>
+                </div>
+                <div class="marcas-logo-sub">EXPERIENCIA, PROFESIONALISMO Y SEGURIDAD</div>
+            </div>
+        </div>
+
+        <!-- ── BARRA AZUL CON NOMBRE DE MARCA ── -->
+        <div class="marcas-bar">
+            <strong><em th:text="${marca != null ? marca : 'Vehículos'}">Vehículos</em></strong>
+        </div>
+
+        <!-- ── GRILLA DE VEHÍCULOS ── -->
+        <div class="vehiculos-body">
+
+            <!-- ══ GRILLA TOYOTA ══ -->
+            <div class="vehiculos-grid" th:if="${marca == null or marca == 'Toyota'}">
+
+                <!-- 1. Toyota 2016 RAV4 LE AWD -->
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/toyota/rav4_2016.jpg}"
+                             src="/img/toyota/rav4_2016.jpg"
+                             alt="Toyota 2016 RAV4 LE AWD"
+                             class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙 </div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Toyota 2016 RAV4 LE AWD</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=1}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <!-- 2. Toyota 2014 Yaris SE -->
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/toyota/yaris_2014.jpg}"
+                             src="/img/toyota/yaris_2014.jpg"
+                             alt="Toyota 2014 Yaris SE"
+                             class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Toyota 2014 Yaris SE</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=2}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <!-- 3. 2023 Toyota Rush G -->
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/toyota/rush_2023.jpg}"
+                             src="/img/toyota/rush_2023.jpg"
+                             alt="2023 Toyota Rush G"
+                             class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">2023 TOYOTA RUSH G</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=3}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <!-- 4. 2024 Toyota Yaris E -->
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/toyota/yaris_2024.jpg}"
+                             src="/img/toyota/yaris_2024.jpg"
+                             alt="2024 Toyota Yaris E"
+                             class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">2024 TOYOTA YARIS E</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=4}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <!-- 5. 2007 Toyota Yaris -->
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/toyota/yaris_2007.jpg}"
+                             src="/img/toyota/yaris_2007.jpg"
+                             alt="2007 Toyota Yaris"
+                             class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">2007 TOYOTA YARIS</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=5}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <!-- 6. 2002 Toyota RAV4 --> 
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/toyota/rav4_2002.jpg}" 
+                             src="/img/toyota/rav4_2002.jpg" 
+                             alt="2002 Toyota RAV4"
+                             class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">2002 TOYOTA RAV4</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=6}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <!-- 7. 2019 Toyota Tacoma -->
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/toyota/tacoma_2019.jpg}"
+                             src="/img/toyota/tacoma_2019.jpg"
+                             alt="2019 Toyota Tacoma"
+                             class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🛻</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">2019 TOYOTA TACOMA</p>
+                        <p class="v-detalle">AUTOMÁTICO | 3500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=7}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <!-- 8. 2014 Toyota RAV4 -->
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/toyota/rav4_2014.jpg}"
+                             src="/img/toyota/rav4_2014.jpg"
+                             alt="2014 Toyota RAV4"
+                             class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">2014 TOYOTA RAV4</p>
+                        <p class="v-detalle">MANUAL | 2500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=8}" class="btn-comprar">Comprar</a>
+                </div>
+
+            </div><!-- /vehiculos-grid toyota -->
+
+            <!-- ══ GRILLA HONDA ══ -->
+            <div class="vehiculos-grid" th:if="${marca == 'Honda'}">
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/honda/civic_2020.jpg}" src="/img/honda/civic_2020.jpg"
+                             alt="Honda Civic 2020" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Honda Civic 2020</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=11}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/honda/crv_2019.jpg}" src="/img/honda/crv_2019.jpg"
+                             alt="Honda CR-V 2019" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Honda CR-V 2019</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=12}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/honda/hrv_2021.jpg}" src="/img/honda/hrv_2021.jpg"
+                             alt="Honda HR-V 2021" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Honda HR-V 2021</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1800 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=13}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/honda/fit_2018.jpg}" src="/img/honda/fit_2018.jpg"
+                             alt="Honda Fit 2018" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Honda Fit 2018</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1300 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=14}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/honda/pilot_2017.jpg}" src="/img/honda/pilot_2017.jpg"
+                             alt="Honda Pilot 2017" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Honda Pilot 2017</p>
+                        <p class="v-detalle">AUTOMÁTICO | 3500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=15}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/honda/accord_2016.jpg}" src="/img/honda/accord_2016.jpg"
+                             alt="Honda Accord 2016" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Honda Accord 2016</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2400 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=16}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/honda/crv_2015.jpg}" src="/img/honda/crv_2015.jpg"
+                             alt="Honda CR-V 2015" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Honda CR-V 2015</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2400 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=17}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/honda/jazz_2014.jpg}" src="/img/honda/jazz_2014.jpg"
+                             alt="Honda Jazz 2014" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Honda Jazz 2014</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1300 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=18}" class="btn-comprar">Comprar</a>
+                </div>
+
+            </div><!-- /vehiculos-grid honda -->
+
+            <!-- ══ GRILLA HYUNDAI ══ -->
+            <div class="vehiculos-grid" th:if="${marca == 'Hyundai'}">
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/hyundai/tucson_2022.jpg}" src="/img/hyundai/tucson_2022.jpg"
+                             alt="Hyundai Tucson 2022" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Hyundai Tucson 2022</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=21}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/hyundai/elantra_2021.jpg}" src="/img/hyundai/elantra_2021.jpg"
+                             alt="Hyundai Elantra 2021" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Hyundai Elantra 2021</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=22}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/hyundai/creta_2020.jpg}" src="/img/hyundai/creta_2020.jpg"
+                             alt="Hyundai Creta 2020" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Hyundai Creta 2020</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1600 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=23}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/hyundai/accent_2019.jpg}" src="/img/hyundai/accent_2019.jpg"
+                             alt="Hyundai Accent 2019" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Hyundai Accent 2019</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1600 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=24}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/hyundai/santafe_2018.jpg}" src="/img/hyundai/santafe_2018.jpg"
+                             alt="Hyundai Santa Fe 2018" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Hyundai Santa Fe 2018</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2400 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=25}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/hyundai/i10_2017.jpg}" src="/img/hyundai/i10_2017.jpg"
+                             alt="Hyundai i10 2017" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Hyundai i10 2017</p>
+                        <p class="v-detalle">AUTOMÁTICO | 1000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=26}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/hyundai/ioniq_2021.jpg}" src="/img/hyundai/ioniq_2021.jpg"
+                             alt="Hyundai Ioniq 2021" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Hyundai Ioniq 2021</p>
+                        <p class="v-detalle">AUTOMÁTICO | HÍBRIDO | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=27}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/hyundai/kona_2022.jpg}" src="/img/hyundai/kona_2022.jpg"
+                             alt="Hyundai Kona 2022" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Hyundai Kona 2022</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=28}" class="btn-comprar">Comprar</a>
+                </div>
+
+            </div><!-- /vehiculos-grid hyundai -->
+
+            <!-- ══ GRILLA PORCHE ══ -->
+            <div class="vehiculos-grid" th:if="${marca == 'Porche'}">
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/porche/911_2020.jpg}" src="/img/porche/911_2020.jpg"
+                             alt="Porsche 911 2020" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🏎️</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Porsche 911 2020</p>
+                        <p class="v-detalle">AUTOMÁTICO | 3000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=31}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/porche/cayenne_2019.jpg}" src="/img/porche/cayenne_2019.jpg"
+                             alt="Porsche Cayenne 2019" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Porsche Cayenne 2019</p>
+                        <p class="v-detalle">AUTOMÁTICO | 3000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=32}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/porche/macan_2021.jpg}" src="/img/porche/macan_2021.jpg"
+                             alt="Porsche Macan 2021" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Porsche Macan 2021</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=33}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/porche/panamera_2018.jpg}" src="/img/porche/panamera_2018.jpg"
+                             alt="Porsche Panamera 2018" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🏎️</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Porsche Panamera 2018</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2900 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=34}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/porche/boxster_2017.jpg}" src="/img/porche/boxster_2017.jpg"
+                             alt="Porsche Boxster 2017" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🏎️</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Porsche Boxster 2017</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=35}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/porche/taycan_2022.jpg}" src="/img/porche/taycan_2022.jpg"
+                             alt="Porsche Taycan 2022" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🏎️</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Porsche Taycan 2022</p>
+                        <p class="v-detalle">AUTOMÁTICO | ELÉCTRICO</p>
+                    </div>
+                    <a th:href="@{/detalle?id=36}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/porche/cayman_2016.jpg}" src="/img/porche/cayman_2016.jpg"
+                             alt="Porsche Cayman 2016" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🏎️</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Porsche Cayman 2016</p>
+                        <p class="v-detalle">MANUAL | 2700 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=37}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/porche/cayenne_2015.jpg}" src="/img/porche/cayenne_2015.jpg"
+                             alt="Porsche Cayenne 2015" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Porsche Cayenne 2015</p>
+                        <p class="v-detalle">AUTOMÁTICO | 3600 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=38}" class="btn-comprar">Comprar</a>
+                </div>
+
+            </div><!-- /vehiculos-grid porche -->
+
+            <!-- ══ GRILLA SUBARU ══ -->
+            <div class="vehiculos-grid" th:if="${marca == 'Subaru'}">
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/subaru/outback_2021.jpg}" src="/img/subaru/outback_2021.jpg"
+                             alt="Subaru Outback 2021" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Subaru Outback 2021</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=41}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/subaru/forester_2020.jpg}" src="/img/subaru/forester_2020.jpg"
+                             alt="Subaru Forester 2020" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Subaru Forester 2020</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=42}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/subaru/impreza_2019.jpg}" src="/img/subaru/impreza_2019.jpg"
+                             alt="Subaru Impreza 2019" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Subaru Impreza 2019</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=43}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/subaru/xv_2022.jpg}" src="/img/subaru/xv_2022.jpg"
+                             alt="Subaru XV 2022" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Subaru XV 2022</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=44}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/subaru/legacy_2018.jpg}" src="/img/subaru/legacy_2018.jpg"
+                             alt="Subaru Legacy 2018" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚗</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Subaru Legacy 2018</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=45}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/subaru/wrx_2020.jpg}" src="/img/subaru/wrx_2020.jpg"
+                             alt="Subaru WRX 2020" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🏎️</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Subaru WRX 2020</p>
+                        <p class="v-detalle">MANUAL | 2000 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=46}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/subaru/baja_2006.jpg}" src="/img/subaru/baja_2006.jpg"
+                             alt="Subaru Baja 2006" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🛻</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Subaru Baja 2006</p>
+                        <p class="v-detalle">MANUAL | 2500 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=47}" class="btn-comprar">Comprar</a>
+                </div>
+
+                <div class="v-card">
+                    <div class="v-img-box">
+                        <img th:src="@{/img/subaru/ascent_2023.jpg}" src="/img/subaru/ascent_2023.jpg"
+                             alt="Subaru Ascent 2023" class="v-foto"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+                        <div class="v-fallback">🚙</div>
+                    </div>
+                    <div class="v-info">
+                        <p class="v-nombre">Subaru Ascent 2023</p>
+                        <p class="v-detalle">AUTOMÁTICO | 2400 cc | GASOLINA</p>
+                    </div>
+                    <a th:href="@{/detalle?id=48}" class="btn-comprar">Comprar</a>
+                </div>
+
+            </div><!-- /vehiculos-grid subaru -->
+
+            <!-- Flecha volver -->
+            <div class="back-arrow-row" style="margin-top:14px;">
+                <a th:href="@{/marcas}" class="back-arrow">&#171;</a>
+            </div>
+
+        </div><!-- /vehiculos-body -->
+
+    </div>
+
+</body>
+</html>

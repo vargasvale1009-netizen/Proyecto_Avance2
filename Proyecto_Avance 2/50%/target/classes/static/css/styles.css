@@ -1,0 +1,187 @@
+/* ============================================================
+   VehiculosCR.com — styles.css
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #b0b0b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Contenedor tipo teléfono / tarjeta centrada */
+.phone-wrapper {
+    width: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ——— SECCIÓN HERO ——— */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background: linear-gradient(
+        180deg,
+        #1a3a5c 0%,
+        #1e4d6b 20%,
+        #2e6688 35%,
+        #3a7a8a 45%,
+        #4a8a6a 55%,
+        #3a6a40 65%,
+        #2a4a28 75%,
+        #1a2a18 85%,
+        #0d1a0c 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+/* Cielo degradado simulado (estilo atardecer/amanecer) */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55%;
+    background: radial-gradient(
+        ellipse at 50% 60%,
+        #f5a623 0%,
+        #e8722a 20%,
+        #c0392b 35%,
+        #6a1a3a 55%,
+        #1a1a4a 75%,
+        #0a0a20 100%
+    );
+    opacity: 0.85;
+}
+
+/* Montañas de fondo */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 42%;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background:
+        /* montaña izquierda */
+        linear-gradient(135deg, transparent 49%, #1a2a18 50%) 0 0 / 55% 100% no-repeat,
+        /* montaña derecha */
+        linear-gradient(225deg, transparent 49%, #1a2a18 50%) 45% 0 / 55% 100% no-repeat;
+}
+
+/* Carretera */
+.hero-section .road {
+    display: none; /* usamos pseudo-elementos en lugar del div */
+}
+
+/* Área del SVG del auto */
+.car-logo-area {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.car-svg {
+    width: 290px;
+    height: auto;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+}
+
+/* Nombre de la marca */
+.brand-name {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    line-height: 1.05;
+    margin-top: 6px;
+}
+
+.brand-white {
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.brand-red {
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #e8002d;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Slogan al fondo del hero */
+.slogan {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    text-align: center;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+/* ——— SECCIÓN DE BOTONES ——— */
+.buttons-section {
+    background-color: #d8d8d8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 36px 30px 40px;
+}
+
+/* Botón principal estilo cyan/turquesa con borde */
+.btn-main {
+    display: block;
+    width: 100%;
+    max-width: 230px;
+    padding: 13px 20px;
+    background-color: #00d4e8;
+    border: 2.5px solid #00b8cc;
+    border-radius: 6px;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-main:hover {
+    background-color: #00bcd4;
+    transform: translateY(-1px);
+}
+
+.btn-main:active {
+    transform: translateY(0);
+}

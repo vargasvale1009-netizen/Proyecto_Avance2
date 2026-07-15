@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Marcas — VehiculosCR.com</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/marcas.css}"/>
+</head>
+<body>
+
+    <div class="phone-wrapper">
+
+        <!-- ── CABECERA: logo sobre fondo blanco ── -->
+        <div class="marcas-header">
+            <div class="marcas-logo-box">
+                <!-- Silueta del auto en rojo/azul estilo logo VehiculosCR -->
+                <svg class="marcas-car-svg" viewBox="0 0 260 80" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Trazos de pincel (fondo decorativo) -->
+                    <path d="M10 45 Q60 20 200 18 Q240 18 250 38" fill="none" stroke="#e8b4c0" stroke-width="28" stroke-linecap="round" opacity="0.35"/>
+                    <!-- Carrocería -->
+                    <path d="M25 55 Q40 55 48 46 Q64 26 105 22 Q140 18 170 22 Q200 26 212 42 Q220 50 232 53 L236 55 Q240 57 236 60 L232 60 Q230 66 222 66 Q214 66 212 60 L72 60 Q70 66 62 66 Q54 66 52 60 L25 60 Q18 58 18 55 Z"
+                          fill="none" stroke="#1a3a6e" stroke-width="2.2"/>
+                    <!-- Techo -->
+                    <path d="M80 46 Q90 28 128 22 Q165 18 185 44"
+                          fill="none" stroke="#1a3a6e" stroke-width="2.2"/>
+                    <!-- Ventana delantera -->
+                    <path d="M133 24 Q158 21 182 42 L162 44 Q150 30 133 28 Z"
+                          fill="rgba(26,58,110,0.12)" stroke="#1a3a6e" stroke-width="1"/>
+                    <!-- Ventana trasera -->
+                    <path d="M84 44 Q92 28 130 24 L130 28 Q96 30 90 44 Z"
+                          fill="rgba(26,58,110,0.12)" stroke="#1a3a6e" stroke-width="1"/>
+                    <!-- Rueda trasera -->
+                    <circle cx="62"  cy="60" r="9" fill="none" stroke="#c0392b" stroke-width="2.2"/>
+                    <circle cx="62"  cy="60" r="3.5" fill="#c0392b"/>
+                    <!-- Rueda delantera -->
+                    <circle cx="222" cy="60" r="9" fill="none" stroke="#c0392b" stroke-width="2.2"/>
+                    <circle cx="222" cy="60" r="3.5" fill="#c0392b"/>
+                    <!-- Faro delantero -->
+                    <path d="M230 49 L238 46 L239 51 L232 53 Z" fill="#c0392b"/>
+                    <!-- Acentos rojos laterales -->
+                    <line x1="26" y1="57" x2="10" y2="55" stroke="#c0392b" stroke-width="1.8"/>
+                    <line x1="236" y1="57" x2="250" y2="54" stroke="#c0392b" stroke-width="1.8"/>
+                </svg>
+                <!-- Nombre de la marca debajo del auto -->
+                <div class="marcas-logo-text">
+                    <span class="ml-red">VEHICULOS</span><span class="ml-blue">CR</span><span class="ml-red">.COM</span>
+                </div>
+                <div class="marcas-logo-sub">EXPERIENCIA, PROFESIONALISMO Y SEGURIDAD</div>
+            </div>
+        </div>
+
+        <!-- ── BARRA AZUL: subtítulo ── -->
+        <div class="marcas-bar">
+            <strong><em>Vehiculos nuevos y usados</em></strong>
+        </div>
+
+        <!-- ── CONTENIDO: selector de marcas ── -->
+        <div class="marcas-body">
+            <p class="marcas-subtitle"><strong>Elige la marca de tu preferencia</strong></p>
+
+            <a th:href="@{/vehiculos?marca=Toyota}"   class="btn-marca">Toyota</a>
+            <a th:href="@{/vehiculos?marca=Honda}"    class="btn-marca">Honda</a>
+            <a th:href="@{/vehiculos?marca=Hyundai}"  class="btn-marca">Hyundai</a>
+            <a th:href="@{/vehiculos?marca=Porsche}"  class="btn-marca">Porche</a>
+            <a th:href="@{/vehiculos?marca=Subaru}"   class="btn-marca">SUBARU</a>
+
+            <!-- Flecha de regreso -->
+            <div class="back-arrow-row">
+                <a th:href="@{/login}" class="back-arrow">&#171;</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
